@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('blog_posts', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // Creates ID field that is also primary key in our table
+            // code added
+            $table->text('title'); // title of blog post
+            $table->text('body'); // Body of blog post
+            $table->text('user_id'); // user_id of blog post author
+            // end of code added
+            $table->timestamps(); // Creates two TIMESTAMP fields (created_at & updated_at)
         });
     }
 
